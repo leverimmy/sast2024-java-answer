@@ -1,5 +1,7 @@
 package homework.Wordle;
 
+import org.json.JSONObject;
+
 import java.util.Arrays;
 import java.util.Objects;
 
@@ -22,35 +24,37 @@ public class State {
         word = "";
         status = GameStatus.RUNNING;
     }
-    public State(Color[] word_state, Color[] alphabet_state, int chance_left, String answer, String word, GameStatus status) {
-        this.word_state = word_state;
-        this.alphabet_state = alphabet_state;
-        this.chance_left = chance_left;
-        this.answer = answer;
-        this.word = word;
-        this.status = status;
+    public State(JSONObject json) {
+        this.word_state = new Color[WORD_LENGTH];
+        String word_state_string = json.getString("word_state");
+        for (int i = 0; i < WORD_LENGTH; i++) {
+            this.word_state[i] = Color.getColorByChar(word_state_string.charAt(i));
+        }
+        this.alphabet_state = new Color[ALPHABET_SIZE];
+        String alphabet_state_string = json.getString("alphabet_state");
+        for (int i = 0; i < ALPHABET_SIZE; i++) {
+            this.alphabet_state[i] = Color.getColorByChar(alphabet_state_string.charAt(i));
+        }
+        this.chance_left = json.getInt("chance_left");
+        this.answer = json.getString("answer");
+        this.word = json.getString("word");
+        this.status = GameStatus.valueOf(json.getString("status"));
+    }
+    @Override
+    public String toString() {
+        return Arrays.toString(word_state) + "$" + Arrays.toString(alphabet_state) + "$"
+                + chance_left + "$" + answer + "$" + word + "$" + status;
     }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        State state = (State) o;
-        if (!Arrays.equals(word_state, state.word_state)) return false;
-        if (!Arrays.equals(alphabet_state, state.alphabet_state)) return false;
-        if (chance_left != state.chance_left) return false;
-        if (!Objects.equals(answer, state.answer)) return false;
-        if (!Objects.equals(word, state.word)) return false;
-        return status == state.status;
+        return Objects.equals(this.toString(), o.toString());
     }
     @Override
     public int hashCode() {
-        int result = Arrays.hashCode(word_state);
-        result = 31 * result + Arrays.hashCode(alphabet_state);
-        result = 31 * result + chance_left;
-        result = 31 * result + (answer != null ? answer.hashCode() : 0);
-        result = 31 * result + (word != null ? word.hashCode() : 0);
-        result = 31 * result + (status != null ? status.hashCode() : 0);
-        return result;
+        return Objects.hash(Arrays.hashCode(word_state),
+                Arrays.hashCode(alphabet_state), chance_left, answer, word, status);
     }
     // Use colorful display
     public static void printColored(char text, Color color) {

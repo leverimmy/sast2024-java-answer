@@ -8,8 +8,7 @@ public class Wordle {
     static final int TOTAL_CHANCES = 6;             // The chances in total
 
     // Guess `word` at state `s`
-    private static State guess(State s, String word) {
-        s.word = word;
+    public static State guess(State s) {
         Arrays.fill(s.word_state, Color.GRAY);
         int[] guessAlphabetCount = new int[ALPHABET_SIZE];
         int[] answerAlphabetCount = new int[ALPHABET_SIZE];
@@ -20,26 +19,26 @@ public class Wordle {
         }
 
         for (int i = 0; i < WORD_LENGTH; i++) {
-            if (word.charAt(i) == s.answer.charAt(i)) {
-                int word_index = word.charAt(i) - 'A';
+            if (s.word.charAt(i) == s.answer.charAt(i)) {
+                int word_index = s.word.charAt(i) - 'A';
                 guessAlphabetCount[word_index]++;
             }
         }
 
         for (int i = 0; i < WORD_LENGTH; i++) {
-            int word_index = word.charAt(i) - 'A';
-            if (word.charAt(i) == s.answer.charAt(i)) {
+            int word_index = s.word.charAt(i) - 'A';
+            if (s.word.charAt(i) == s.answer.charAt(i)) {
                 s.word_state[i] = Color.GREEN;
                 s.alphabet_state[word_index] = Color.GREEN;
             } else {
-                if (s.answer.contains(String.valueOf(word.charAt(i)))
+                if (s.answer.contains(String.valueOf(s.word.charAt(i)))
                         && guessAlphabetCount[word_index] < answerAlphabetCount[word_index]) {
                     s.word_state[i] = Color.YELLOW;
                 } else {
                     s.word_state[i] = Color.RED;
                 }
                 if (s.alphabet_state[word_index] == Color.GRAY || s.alphabet_state[word_index] == Color.RED) {
-                    if (s.answer.contains(String.valueOf(word.charAt(i)))) {
+                    if (s.answer.contains(String.valueOf(s.word.charAt(i)))) {
                         s.alphabet_state[word_index] = Color.YELLOW;
                     } else {
                         s.alphabet_state[word_index] = Color.RED;
@@ -49,7 +48,7 @@ public class Wordle {
             }
         }
 
-        if (Objects.equals(word, s.answer)) {
+        if (Objects.equals(s.word, s.answer)) {
             s.status = GameStatus.WON;
         } else {
             if (s.chance_left == 0) {
@@ -83,7 +82,8 @@ public class Wordle {
                     System.out.println("INVALID WORD GUESS");
                 }
             } while (wordSet.isNotAccWord(word));
-            state = guess(state, word);
+            state.word = word;
+            state = guess(state);
             state.show();
         }
         if (state.status == GameStatus.LOST) {

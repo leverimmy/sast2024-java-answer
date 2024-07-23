@@ -2,7 +2,7 @@
 
 这是 [2024 年清华大学计算机系学生科协暑期培训](https://summer24.net9.org/) Java 部分的作业。本部分作业由三个小作业组成。
 
-作业文件位于 `src/main/java/homework/` 中。
+作业文件位于 `src/main/java/homework/` 中。测试点位于 `assets/testcases/` 中。
 
 ## 作业 1：ThreeSumClosest
 
