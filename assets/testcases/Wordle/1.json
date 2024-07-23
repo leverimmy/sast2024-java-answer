@@ -1,18 +1,18 @@
 {
     "input": {
-        "word_state": "XXXXX",
-        "alphabet_state": "XXXXXXXXXXXXXXXXXXXXXXXXXX",
-        "chance_left": 6,
-        "answer": "LEVEL",
-        "word": "SMALL",
+        "word_state": "GYRRY",
+        "alphabet_state": "XXXXYGXXXXXXXXXXXYXXXRXXXX",
+        "chance_left": 5,
+        "answer": "fibre",
+        "word": "femme",
         "status": "RUNNING"
     },
     "output": {
-        "word_state": "RRRYG",
-        "alphabet_state": "RXXXXXXXXXXGRXXXXXRXXXXXXX",
+        "word_state": "GRRRG",
+        "alphabet_state": "XXXXGGXXXXXXRXXXXYXXXRXXXX",
         "chance_left": 4,
-        "answer": "LEVEL",
-        "word": "SMALL",
+        "answer": "fibre",
+        "word": "femme",
         "status": "RUNNING"
     }
 }

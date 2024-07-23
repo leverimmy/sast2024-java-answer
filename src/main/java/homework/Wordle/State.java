@@ -36,8 +36,8 @@ public class State {
             this.alphabet_state[i] = Color.getColorByChar(alphabet_state_string.charAt(i));
         }
         this.chance_left = json.getInt("chance_left");
-        this.answer = json.getString("answer");
-        this.word = json.getString("word");
+        this.answer = json.getString("answer").toUpperCase();
+        this.word = json.getString("word").toUpperCase();
         this.status = GameStatus.valueOf(json.getString("status"));
     }
     @Override

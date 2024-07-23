@@ -34,7 +34,6 @@ class WordleTest {
             return new Testcase(new State(input_json), new State(output_json));
         }
     }
-
     @Test
     void testWordle() {
         for (int i = 1; i <= 10; i++) {
