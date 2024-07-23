@@ -10,7 +10,7 @@
     "output": {
         "word_state": "RRRYG",
         "alphabet_state": "RXXXXXXXXXXGRXXXXXRXXXXXXX",
-        "chance_left": 5,
+        "chance_left": 4,
         "answer": "LEVEL",
         "word": "SMALL",
         "status": "RUNNING"
