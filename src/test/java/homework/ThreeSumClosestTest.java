@@ -1,41 +1,74 @@
 package homework;
 
+import org.json.JSONArray;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Arrays;
+import java.util.List;
+
+import org.json.JSONObject;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 class ThreeSumClosestTest {
+    public static class Input {
+        int[] nums;
+        int target;
+        public Input(int[] nums, int target) {
+            this.nums = nums;
+            this.target = target;
+        }
+
+        @Override
+        public String toString() {
+            return Arrays.toString(nums) + " " + target;
+        }
+    }
+    public static class Testcase {
+        Input input;
+        int output;
+
+        public Testcase(Input input, int output) {
+            this.input = input;
+            this.output = output;
+        }
+
+        public static Testcase fromJsonFile(String filePath) throws IOException {
+            List<String> lines = Files.readAllLines(Paths.get(filePath));
+            StringBuilder sb = new StringBuilder();
+            for (String line : lines) {
+                sb.append(line).append(System.lineSeparator());
+            }
+
+            JSONObject testcase_json = new JSONObject(sb.toString());
+            JSONObject input_json = testcase_json.getJSONObject("input");
+            JSONObject output_json = testcase_json.getJSONObject("output");
+
+            JSONArray nums_json = input_json.getJSONArray("nums");
+            int length = nums_json.length();
+            int[] intArray = new int[length];
+            for (int i = 0; i < length; i++) {
+                intArray[i] = nums_json.getInt(i);
+            }
+
+            return new Testcase(new Input(intArray, input_json.getInt("target")), output_json.getInt("answer"));
+        }
+    }
 
     @Test
     void testThreeSumClosest() {
-        // Test case 1: Example 1 from the problem statement
-        assertEquals(2, ThreeSumClosest.threeSumClosest(new int[]{-1, 2, 1, -4}, 1), "Test case 1 failed");
-
-        // Test case 2: Example 2 from the problem statement
-        assertEquals(0, ThreeSumClosest.threeSumClosest(new int[]{0, 0, 0}, 1), "Test case 2 failed");
-
-        // Test case 3: Array with negative numbers
-        assertEquals(-15, ThreeSumClosest.threeSumClosest(new int[]{-7, -6, -5, -4}, -11), "Test case 3 failed");
-
-        // Test case 4: Array with positive numbers
-        assertEquals(12, ThreeSumClosest.threeSumClosest(new int[]{3, 4, 5, 6, 7}, 9), "Test case 4 failed");
-
-        // Test case 5: Array with a mix of negative and positive numbers
-        assertEquals(3, ThreeSumClosest.threeSumClosest(new int[]{1, 2, -3, 4, -5}, 4), "Test case 5 failed");
-
-        // Test case 6: Array with zeros
-        assertEquals(6, ThreeSumClosest.threeSumClosest(new int[]{0, 0, 0, 6}, 6), "Test case 6 failed");
-
-        // Test case 7: Array with all numbers equal
-        assertEquals(9, ThreeSumClosest.threeSumClosest(new int[]{3, 3, 3, 3, 3}, 9), "Test case 7 failed");
-
-        // Test case 8: Array with large numbers
-        assertEquals(2103, ThreeSumClosest.threeSumClosest(new int[]{700, 701, 702, 703, 704}, 1406), "Test case 8 failed");
-
-        // Test case 9: Array with small numbers close to the target
-        assertEquals(7, ThreeSumClosest.threeSumClosest(new int[]{1, 2, 3, 4, 5, 6}, 7), "Test case 9 failed");
-
-        // Test case 10: Array with one number far from others
-        assertEquals(7, ThreeSumClosest.threeSumClosest(new int[]{1, 2, 3, 4, 100}, 7), "Test case 10 failed");
+        for (int i = 1; i <= 10; i++) {
+            String jsonFilePath = "assets/testcases/ThreeSumClosest/" + i + ".json";
+            try {
+                Testcase testcase = Testcase.fromJsonFile(jsonFilePath);
+                int result = ThreeSumClosest.threeSumClosest(testcase.input.nums, testcase.input.target);
+                assertEquals(testcase.output, result, "Test case failed for input #" + i + ": " + testcase.input);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
