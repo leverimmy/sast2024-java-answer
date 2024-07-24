@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1611c485-da40-4895-bda7-0746b4f17086" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+    <list default="true" id="1ffd7e11-6999-44d7-8b8b-e25330905356" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,33 +17,70 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 3
-}]]></component>
-  <component name="ProjectId" id="2jdy9P7Z0thK9gN03aVPInvuTbS" />
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2je2ILjVocgJtLzNnnhSeSXxqxq" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.sast2024-java-answer [:LinkedListExample.main()].executor": "Run",
-    "Gradle.sast2024-java-answer [:Wordle.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "E:/Codes/Projects/sast2024-java-answer",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Gradle.LongestSubstringWithoutRepeatingCharactersTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ThreeSumClosestTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.WordleTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:CompositionExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:EnumExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:InheritanceExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:InterfaceExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:LinkedListExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:ObjectExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:StaticExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java [:Wordle.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.sast2024-java.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Codes/Projects/sast2024-java-answer&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.24942529&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -61,12 +92,17 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1611c485-da40-4895-bda7-0746b4f17086" name="Changes" comment="" />
-      <created>1721731097585</created>
+      <changelist id="1ffd7e11-6999-44d7-8b8b-e25330905356" name="Changes" comment="" />
+      <created>1721733141355</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1721731097585</updated>
-      <workItem from="1721731098830" duration="190000" />
+      <updated>1721733141355</updated>
+      <workItem from="1721733142420" duration="884000" />
+      <workItem from="1721736437950" duration="171000" />
+      <workItem from="1721741690744" duration="6327000" />
+      <workItem from="1721792539449" duration="8168000" />
+      <workItem from="1721803750833" duration="182000" />
+      <workItem from="1721812695724" duration="165000" />
     </task>
     <servers />
   </component>

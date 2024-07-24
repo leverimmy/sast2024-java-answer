@@ -7,12 +7,12 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class WordSet {
-    private static Set<String> final_set = new HashSet<>();           // Words that are allowed to be guessed
-    private static Set<String> acc_set = new HashSet<>();             // Words that are allowed to be answers
+    private static Set<String> finalSet = new HashSet<>();           // Words that are allowed to be guessed
+    private static Set<String> accSet = new HashSet<>();             // Words that are allowed to be answers
 
     public WordSet(String final_set_path, String acc_set_path) {
-        final_set = retrieve_set_from_file(final_set_path);
-        acc_set = retrieve_set_from_file(acc_set_path);
+        finalSet = retrieve_set_from_file(final_set_path);
+        accSet = retrieve_set_from_file(acc_set_path);
     }
     private Set<String> retrieve_set_from_file(String path) {
         Set<String> set = new HashSet<>();
@@ -28,9 +28,9 @@ public class WordSet {
         return set;
     }
     public boolean isNotFinalWord(String word) {
-        return !final_set.contains(word);
+        return !finalSet.contains(word);
     }
     public boolean isNotAccWord(String word) {
-        return !acc_set.contains(word);
+        return !accSet.contains(word);
     }
 }

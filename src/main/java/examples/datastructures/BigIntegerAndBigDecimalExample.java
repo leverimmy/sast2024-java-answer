@@ -2,6 +2,7 @@ package examples.datastructures;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 
 public class BigIntegerAndBigDecimalExample {
     public static void main(String[] args) {
@@ -32,7 +33,7 @@ public class BigIntegerAndBigDecimalExample {
         BigDecimal sumBD = bigDec1.add(bigDec2);
         BigDecimal differenceBD = bigDec1.subtract(bigDec2);
         BigDecimal productBD = bigDec1.multiply(bigDec2);
-        BigDecimal quotientBD = bigDec1.divide(bigDec2, 10, BigDecimal.ROUND_HALF_UP);
+        BigDecimal quotientBD = bigDec1.divide(bigDec2, 10, RoundingMode.HALF_UP);
 
         System.out.println("BigDecimal Sum: " + sumBD);
         System.out.println("BigDecimal Difference: " + differenceBD);
@@ -41,6 +42,6 @@ public class BigIntegerAndBigDecimalExample {
 
         // Demonstrate precision of BigDecimal
         BigDecimal pi = new BigDecimal(Math.PI);
-        System.out.println("Pi (to 10 scale): " + pi.setScale(10, BigDecimal.ROUND_HALF_UP));
+        System.out.println("Pi (to 10 scale): " + pi.setScale(10, RoundingMode.HALF_UP));
     }
 }

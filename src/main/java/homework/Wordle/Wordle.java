@@ -9,7 +9,8 @@ public class Wordle {
 
     // Guess `word` at state `s`
     public static State guess(State s) {
-        Arrays.fill(s.word_state, Color.GRAY);
+        // TODO begin
+        Arrays.fill(s.wordState, Color.GRAY);
         int[] guessAlphabetCount = new int[ALPHABET_SIZE];
         int[] answerAlphabetCount = new int[ALPHABET_SIZE];
 
@@ -28,20 +29,20 @@ public class Wordle {
         for (int i = 0; i < WORD_LENGTH; i++) {
             int word_index = s.word.charAt(i) - 'A';
             if (s.word.charAt(i) == s.answer.charAt(i)) {
-                s.word_state[i] = Color.GREEN;
-                s.alphabet_state[word_index] = Color.GREEN;
+                s.wordState[i] = Color.GREEN;
+                s.alphabetState[word_index] = Color.GREEN;
             } else {
                 if (s.answer.contains(String.valueOf(s.word.charAt(i)))
                         && guessAlphabetCount[word_index] < answerAlphabetCount[word_index]) {
-                    s.word_state[i] = Color.YELLOW;
+                    s.wordState[i] = Color.YELLOW;
                 } else {
-                    s.word_state[i] = Color.RED;
+                    s.wordState[i] = Color.RED;
                 }
-                if (s.alphabet_state[word_index] == Color.GRAY || s.alphabet_state[word_index] == Color.RED) {
+                if (s.alphabetState[word_index] == Color.GRAY || s.alphabetState[word_index] == Color.RED) {
                     if (s.answer.contains(String.valueOf(s.word.charAt(i)))) {
-                        s.alphabet_state[word_index] = Color.YELLOW;
+                        s.alphabetState[word_index] = Color.YELLOW;
                     } else {
-                        s.alphabet_state[word_index] = Color.RED;
+                        s.alphabetState[word_index] = Color.RED;
                     }
                 }
                 guessAlphabetCount[word_index]++;
@@ -51,17 +52,20 @@ public class Wordle {
         if (Objects.equals(s.word, s.answer)) {
             s.status = GameStatus.WON;
         } else {
-            if (s.chance_left == 1) {
+            if (s.chancesLeft == 1) {
                 s.status = GameStatus.LOST;
             }
-            s.chance_left--;
+            s.chancesLeft--;
         }
+        // TODO end
         return s;
     }
     public static void main(String[] args) {
+        // Read word sets from files
         WordSet wordSet = new WordSet("assets/wordle/FINAL.txt", "assets/wordle/ACC.txt");
 
         Scanner input = new Scanner(System.in);
+        // Keep asking for an answer if invalid
         String answer;
         do {
             System.out.print("Enter answer: ");
@@ -73,6 +77,7 @@ public class Wordle {
 
         State state = new State(answer);
         while (state.status == GameStatus.RUNNING) {
+            // Keep asking for a word guess if invalid
             String word;
             do {
                 System.out.print("Enter word guess: ");
@@ -81,6 +86,7 @@ public class Wordle {
                     System.out.println("INVALID WORD GUESS");
                 }
             } while (wordSet.isNotAccWord(word));
+            // Try to guess a word
             state.word = word;
             state = guess(state);
             state.show();
@@ -88,7 +94,7 @@ public class Wordle {
         if (state.status == GameStatus.LOST) {
             System.out.println("You lost! The correct answer is " + state.answer + ".");
         } else {
-            System.out.println("You won! You only used " + (TOTAL_CHANCES - state.chance_left) + " chances.");
+            System.out.println("You won! You only used " + (TOTAL_CHANCES - state.chancesLeft) + " chances.");
         }
     }
 }

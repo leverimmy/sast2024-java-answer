@@ -1,6 +1,6 @@
 package examples.introduction;
 
-public class Operators {
+public class OperatorsExample {
     public static void main(String[] args) {
         int a = 114;
         int b = 514;

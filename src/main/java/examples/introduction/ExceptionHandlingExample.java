@@ -3,7 +3,7 @@ package examples.introduction;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class ExceptionHandling {
+public class ExceptionHandlingExample {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a non-negative integer n, and I will try to calculate 100 / n: ");

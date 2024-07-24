@@ -2,7 +2,7 @@ package examples.introduction;
 
 import java.util.Scanner;
 
-public class IO {
+public class IOExample {
     public static void main(String[] args) {
         // Console Output
         System.out.println("This is an output with a new line.");

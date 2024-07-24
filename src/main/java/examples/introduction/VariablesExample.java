@@ -1,6 +1,6 @@
 package examples.introduction;
 
-public class Variables {
+public class VariablesExample {
     public static void main(String[] args) {
         // Integers
         byte byteVariable = 123;
