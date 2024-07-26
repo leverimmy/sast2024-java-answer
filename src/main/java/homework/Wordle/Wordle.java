@@ -51,12 +51,10 @@ public class Wordle {
 
         if (Objects.equals(s.word, s.answer)) {
             s.status = GameStatus.WON;
-        } else {
-            if (s.chancesLeft == 1) {
-                s.status = GameStatus.LOST;
-            }
-            s.chancesLeft--;
+        } else if (s.chancesLeft == 1) {
+            s.status = GameStatus.LOST;
         }
+        s.chancesLeft--;
         // TODO end
         return s;
     }
