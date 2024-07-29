@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="1ffd7e11-6999-44d7-8b8b-e25330905356" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/homework/Wordle/Wordle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/homework/Wordle/Wordle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/examples/oop/EnumExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/oop/EnumExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/examples/oop/StaticExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/examples/oop/StaticExample.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +27,12 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="sast2024-java" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -72,7 +78,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Codes/Projects/sast2024-java-answer&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Projects/sast2024-java-answer&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -108,6 +114,8 @@
       <workItem from="1721812695724" duration="165000" />
       <workItem from="1721965308171" duration="351000" />
       <workItem from="1721966511138" duration="21000" />
+      <workItem from="1722258104641" duration="50000" />
+      <workItem from="1722258500146" duration="73000" />
     </task>
     <servers />
   </component>
